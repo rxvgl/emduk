@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página con Fondo Morado Suave</title>
+
+  <!-- Fuente elegante -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 80px 0 100px 0;
+      background: linear-gradient(to bottom right, #d6b8ff, #b085f5);
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .autor {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 300;
+      letter-spacing: 0.5px;
+      user-select: none;
+      font-style: italic;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      animation: slideDown 1.2s ease;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      max-width: 600px;
+      color: #f2e9ff;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .imagen-principal {
+      width: 80%;
+      max-width: 900px;
+      border-radius: 20px;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    button {
+      background-color: white;
+      color: #7a00cc;
+      border: none;
+      padding: 12px 25px;
+      margin-top: 30px;
+      font-size: 1.1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      animation: fadeIn 2.2s ease-in-out;
+    }
+
+    button:hover {
+      background-color: #7a00cc;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .contenido-extra {
+      display: none;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      width: 90%;
+      max-width: 1000px;
+      margin-top: 40px;
+    }
+
+    .contenido-extra.visible {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .explicacion {
+      font-size: 1rem;
+      color: #f5ebff;
+      max-width: 800px;
+      margin: 0 auto 35px auto;
+      line-height: 1.6;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 15px 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: none;
+    }
+
+    .contenido-extra.visible .explicacion {
+      animation: subirTexto 0.8s ease forwards;
+    }
+
+    /* Estilo del nombre interactivo (rosa suave 🌸) */
+    .nombre-enlace {
+      color: #ffb6d9; /* rosa suave */
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(255, 182, 217, 0.8);
+    }
+
+    .nombre-enlace:hover {
+      color: #ffd6ef;
+      text-shadow: 0 0 8px rgba(255, 200, 230, 0.9);
+      border-bottom: 1px solid #ffd6ef;
+    }
+
+    @keyframes subirTexto {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .imagen2 {
+      width: 70%;
+      max-width: 700px;
+      border-radius: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .fila {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .fila img {
+      width: 45%;
+      max-width: 400px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
+    }
+
+    .fila img:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="autor">Criseyda Rivera</div>
+
+  <h1>Duki</h1>
+  <p>Mauro Ezequiel Lombardo mejor conocido por Duki, El cara tatuada, Duko...</p>
+
+  <img src="img/duk.jpg" alt="Imagen principal" class="imagen-principal">
+
+  <button id="botonVerMas" onclick="mostrarContenido()">Ver más</button>
+
+  <div class="contenido-extra" id="contenido">
+    <p class="explicacion">
+       Duki, cuyo nombre real es Mauro Ezequiel Lombardo Quiroga, es un rapero, cantante y compositor argentino nacido en 1996. Es uno de los principales exponentes del trap y la música urbana en Argentina y Latinoamérica. Se hizo famoso tras participar en competencias de freestyle como “El Quinto Escalón” y luego lanzó éxitos que lo consolidaron internacionalmente, como *She Don’t Give a FO*, *Goteo* y *Givenchy*.
+        Además, Duki mantiene una relación sentimental con la cantante argentina 
+ 
+      <span class="nombre-enlace" onclick="buscarCantante('Emilia Mernes')">Emilia Mernes</span>, 
+      también muy reconocida en el pop urbano. Ambos han colaborado musicalmente y son una de las parejas más populares del mundo musical latino.
+    </p>
+
+    <img src="img/duki.1.jpg" alt="Imagen adicional" class="imagen2">
+    <div class="fila">
+      <img src="img/duki.2.jpg" alt="Imagen vertical 1">
+      <img src="img/duki.3.jpg" alt="Imagen vertical 2">
+    </div>
+  </div>
+
+  <script>
+    function mostrarContenido() {
+      const contenido = document.getElementById('contenido');
+      const boton = document.getElementById('botonVerMas');
+      
+      contenido.classList.toggle('visible');
+      
+      if (contenido.classList.contains('visible')) {
+        boton.textContent = 'Ocultar';
+      } else {
+        boton.textContent = 'Ver más';
+      }
+    }
+
+    function buscarCantante(nombre) {
+      const url = `https://www.google.com/search?q=${encodeURIComponent(nombre)}`;
+      window.open(url, '_blank');
+    }
+  </script>
+
+</body>
+</html>
